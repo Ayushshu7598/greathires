@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ayush Shukla — Global Talent Acquisition Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════ */
+:root{
+  --blue:#003d7a;
+  --blue2:#005cbf;
+  --blue-light:#e8f0fb;
+  --gold:#e6a817;
+  --gold2:#f5c842;
+  --red:#c0392b;
+  --white:#ffffff;
+  --off:#f7f9fc;
+  --ink:#1a1a2e;
+  --muted:#5a6a80;
+  --line:#dde4ef;
+  --radius:4px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--blue2);border-radius:3px}
+
+/* ═══════════════════════════════════════
+   TOP BAR
+═══════════════════════════════════════ */
+.topbar{
+  background:var(--blue);color:rgba(255,255,255,.85);
+  padding:.45rem 5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:.75rem;letter-spacing:.03em;
+}
+.topbar a{color:rgba(255,255,255,.85);transition:color .2s}
+.topbar a:hover{color:var(--gold)}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:2rem}
+.topbar-item{display:flex;align-items:center;gap:.5rem}
+.topbar-item svg{opacity:.7;flex-shrink:0}
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--white);
+  box-shadow:0 2px 20px rgba(0,0,0,.08);
+  padding:0 5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:70px;
+}
+.nav-logo{display:flex;align-items:center;gap:.9rem}
+.nav-logo-mark{
+  width:42px;height:42px;
+  background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.95rem;color:var(--white);
+  letter-spacing:.05em;border-radius:2px;
+  position:relative;
+}
+.nav-logo-mark::after{
+  content:'';
+  position:absolute;bottom:-3px;left:0;right:0;height:3px;
+  background:var(--gold);border-radius:0 0 2px 2px;
+}
+.nav-logo-text{line-height:1.2}
+.nav-logo-name{font-weight:700;font-size:.95rem;color:var(--blue);letter-spacing:.02em}
+.nav-logo-sub{font-size:.65rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.nav-menu{display:flex;align-items:center;gap:2.2rem}
+.nav-menu a{
+  font-size:.8rem;font-weight:600;color:var(--ink);
+  letter-spacing:.04em;transition:color .2s;
+  position:relative;padding-bottom:2px;
+}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;
+  background:var(--blue2);transform:scaleX(0);transition:transform .25s;border-radius:1px;
+}
+.nav-menu a:hover{color:var(--blue2)}
+.nav-menu a:hover::after{transform:scaleX(1)}
+.nav-cta{
+  background:var(--blue);color:var(--white)!important;
+  padding:.5rem 1.4rem;border-radius:var(--radius);
+  font-size:.78rem!important;font-weight:700!important;
+  letter-spacing:.06em!important;transition:background .25s!important;
+}
+.nav-cta:hover{background:var(--blue2)!important}
+.nav-cta::after{display:none!important}
+
+/* ═══════════════════════════════════════
+   HERO SLIDER
+═══════════════════════════════════════ */
+.hero{
+  position:relative;overflow:hidden;
+  height:560px;
+}
+.hero-slides{display:flex;height:100%;transition:transform .7s cubic-bezier(.77,0,.18,1)}
+.hero-slide{
+  min-width:100%;height:100%;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-slide:nth-child(1){background:linear-gradient(120deg,#002a54 0%,#004a9e 60%,#0066cc 100%)}
+.hero-slide:nth-child(2){background:linear-gradient(120deg,#1a0a00 0%,#7a3500 60%,#b85c00 100%)}
+.hero-slide:nth-child(3){background:linear-gradient(120deg,#001a3a 0%,#003366 60%,#004080 100%)}
+/* grid overlay */
+.hero-slide::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px),
+             linear-gradient(180deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+/* diagonal accent */
+.hero-slide::after{
+  content:'';
+  position:absolute;right:-80px;top:0;bottom:0;width:55%;
+  background:rgba(255,255,255,.03);
+  clip-path:polygon(18% 0,100% 0,100% 100%,0% 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 5rem;max-width:700px;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:.3rem .9rem;border-radius:20px;
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.85);font-weight:600;margin-bottom:1.4rem;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,4vw,3.4rem);
+  font-weight:700;color:var(--white);line-height:1.18;
+  margin-bottom:1.2rem;
+}
+.hero-title span{color:var(--gold)}
+.hero-desc{
+  font-size:.92rem;color:rgba(255,255,255,.78);
+  max-width:500px;line-height:1.85;margin-bottom:2rem;
+}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{
+  background:var(--gold);color:var(--blue);
+  padding:.7rem 2rem;border-radius:var(--radius);
+  font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  transition:all .25s;border:2px solid var(--gold);display:inline-flex;align-items:center;gap:.5rem;
+}
+.btn-gold:hover{background:transparent;color:var(--gold)}
+.btn-outline-w{
+  background:transparent;color:var(--white);
+  border:2px solid rgba(255,255,255,.4);
+  padding:.7rem 2rem;border-radius:var(--radius);
+  font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  transition:all .25s;
+}
+.btn-outline-w:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+/* slider controls */
+.hero-prev,.hero-next{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);
+  color:var(--white);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  transition:background .2s;
+}
+.hero-prev{left:2rem}.hero-next{right:2rem}
+.hero-prev:hover,.hero-next:hover{background:rgba(255,255,255,.3)}
+.hero-dots{
+  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:.5rem;z-index:10;
+}
+.hero-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s;
+}
+.hero-dot.active{background:var(--gold);width:22px;border-radius:4px}
+
+/* ═══════════════════════════════════════
+   QUICK STATS STRIP
+═══════════════════════════════════════ */
+.stats-strip{
+  background:var(--white);
+  box-shadow:0 4px 30px rgba(0,61,122,.12);
+  display:grid;grid-template-columns:repeat(5,1fr);
+  position:relative;z-index:10;margin-top:-1px;
+}
+.stat-cell{
+  padding:1.8rem 1rem;text-align:center;
+  border-right:1px solid var(--line);
+  transition:background .2s;
+}
+.stat-cell:last-child{border-right:none}
+.stat-cell:hover{background:var(--blue-light)}
+.stat-n{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;font-weight:700;color:var(--blue);line-height:1;
+  display:flex;align-items:baseline;justify-content:center;gap:.1rem;
+}
+.stat-n sup{font-size:1.2rem;font-family:'Poppins',sans-serif;font-weight:700}
+.stat-l{font-size:.72rem;color:var(--muted);margin-top:.4rem;font-weight:500;letter-spacing:.04em}
+
+/* ═══════════════════════════════════════
+   SECTION SHARED
+═══════════════════════════════════════ */
+.sec{padding:5.5rem 5rem}
+.sec-alt{background:var(--off)}
+.sec-center{text-align:center}
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--blue2);font-weight:700;margin-bottom:.7rem;
+}
+.sec-eyebrow::before,.sec-eyebrow::after{
+  content:'';width:28px;height:2px;background:var(--gold);border-radius:1px;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;
+  color:var(--ink);line-height:1.25;margin-bottom:1rem;
+}
+.sec-title span{color:var(--blue2)}
+.sec-sub{font-size:.9rem;color:var(--muted);max-width:620px;margin:0 auto 3rem;line-height:1.8}
+.divider-gold{width:60px;height:3px;background:var(--gold);border-radius:2px;margin:1rem auto 0}
+
+/* ═══════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════ */
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin-top:3rem;
+}
+.service-card{
+  background:var(--white);
+  border:1px solid var(--line);border-radius:6px;
+  padding:2rem 1.8rem;
+  transition:all .3s;position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,61,122,.12);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:56px;height:56px;border-radius:var(--radius);
+  background:var(--blue-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;margin-bottom:1.2rem;
+  transition:background .3s;
+}
+.service-card:hover .service-icon{background:var(--blue);filter:brightness(2)}
+.service-card h3{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.7rem}
+.service-card p{font-size:.82rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem}
+.service-link{
+  font-size:.75rem;font-weight:700;color:var(--blue2);
+  letter-spacing:.06em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:.4rem;
+  transition:gap .2s;
+}
+.service-link:hover{gap:.7rem}
+
+/* ═══════════════════════════════════════
+   ABOUT SPLIT
+═══════════════════════════════════════ */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.about-img-wrap{
+  position:relative;
+}
+.about-img-card{
+  background:var(--blue);
+  border-radius:6px;
+  padding:3rem 2.5rem;
+  color:var(--white);
+  position:relative;overflow:hidden;
+}
+.about-img-card::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:220px;height:220px;border-radius:50%;
+  background:rgba(255,255,255,.05);
+}
+.about-img-card::after{
+  content:'';position:absolute;bottom:-40px;left:-40px;
+  width:160px;height:160px;border-radius:50%;
+  background:rgba(230,168,23,.08);
+}
+.about-avatar{
+  width:110px;height:110px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
+  border:3px solid rgba(255,255,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;font-weight:700;color:var(--white);
+  margin-bottom:1.5rem;position:relative;z-index:1;
+}
+.about-img-card h3{font-size:1.3rem;font-weight:700;margin-bottom:.2rem;position:relative;z-index:1}
+.about-img-card p{font-size:.8rem;color:rgba(255,255,255,.7);margin-bottom:1.5rem;position:relative;z-index:1}
+.about-chips{display:flex;flex-wrap:wrap;gap:.5rem;position:relative;z-index:1}
+.chip{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:.25rem .75rem;border-radius:20px;
+  font-size:.68rem;color:rgba(255,255,255,.85);font-weight:500;
+}
+.about-badge{
+  position:absolute;bottom:-1.5rem;right:-1.5rem;
+  background:var(--gold);color:var(--blue);
+  width:90px;height:90px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-weight:800;box-shadow:0 8px 24px rgba(230,168,23,.4);
+  font-size:.72rem;text-align:center;line-height:1.3;
+}
+.about-badge strong{font-size:1.5rem;display:block;line-height:1}
+.about-text h2{margin-bottom:1rem}
+.about-text p{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:1rem}
+.about-text p strong{color:var(--ink);font-weight:600}
+.about-pillars{
+  display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.5rem;
+}
+.pillar{
+  display:flex;align-items:flex-start;gap:.8rem;
+  padding:1rem;background:var(--blue-light);border-radius:var(--radius);
+  border-left:3px solid var(--blue2);
+}
+.pillar-icon{font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+.pillar h4{font-size:.78rem;font-weight:700;color:var(--blue);margin-bottom:.15rem}
+.pillar p{font-size:.72rem;color:var(--muted)}
+
+/* ═══════════════════════════════════════
+   SECTORS
+═══════════════════════════════════════ */
+.sectors-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+  margin-top:3rem;
+}
+.sector-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:6px;padding:1.6rem;
+  display:flex;align-items:flex-start;gap:1rem;
+  transition:all .25s;
+}
+.sector-card:hover{border-color:var(--blue2);box-shadow:0 8px 28px rgba(0,61,122,.1);transform:translateY(-3px)}
+.sector-icon{
+  width:48px;height:48px;border-radius:var(--radius);
+  background:var(--blue-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.sector-card h3{font-size:.85rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.sector-card p{font-size:.75rem;color:var(--muted);line-height:1.6}
+
+/* ═══════════════════════════════════════
+   WHY ME — 4 PILLARS
+═══════════════════════════════════════ */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.why-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:6px;padding:2rem 1.5rem;text-align:center;
+  transition:all .3s;
+}
+.why-card:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-5px)}
+.why-card:hover .why-num,.why-card:hover h3,.why-card:hover p{color:var(--white)}
+.why-num{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;font-weight:700;color:var(--line);
+  line-height:1;margin-bottom:.5rem;transition:color .3s;
+}
+.why-card h3{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;transition:color .3s}
+.why-card p{font-size:.78rem;color:var(--muted);line-height:1.7;transition:color .3s}
+
+/* ═══════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════ */
+.process-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:0;margin-top:3rem;position:relative;
+}
+.process-steps::before{
+  content:'';
+  position:absolute;top:36px;left:10%;right:10%;height:2px;
+  background:var(--line);z-index:0;
+}
+.step{
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;padding:0 1rem;position:relative;z-index:1;
+}
+.step-num{
+  width:72px;height:72px;border-radius:50%;
+  background:var(--white);border:2px solid var(--blue2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.6rem;
+  font-weight:700;color:var(--blue2);margin-bottom:1rem;
+  transition:all .3s;
+}
+.step:hover .step-num{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.step h4{font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.step p{font-size:.73rem;color:var(--muted);line-height:1.6}
+
+/* ═══════════════════════════════════════
+   EXPERIENCE TIMELINE
+═══════════════════════════════════════ */
+.timeline{max-width:800px;margin:3rem auto 0;position:relative;padding-left:3rem}
+.timeline::before{
+  content:'';position:absolute;left:14px;top:0;bottom:0;
+  width:2px;background:linear-gradient(180deg,var(--blue2),var(--line));
+}
+.tl-item{position:relative;margin-bottom:2.5rem}
+.tl-dot{
+  position:absolute;left:-2.85rem;top:.4rem;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--white);border:3px solid var(--blue2);
+  box-shadow:0 0 0 4px rgba(0,92,191,.12);
+}
+.tl-period{
+  font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue2);font-weight:700;margin-bottom:.3rem;
+}
+.tl-role{font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.2rem}
+.tl-company{font-size:.82rem;color:var(--gold2);font-weight:600;margin-bottom:.2rem;filter:brightness(.8)}
+.tl-loc{font-size:.75rem;color:var(--muted);margin-bottom:.7rem}
+.tl-desc{font-size:.82rem;color:var(--muted);line-height:1.8}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem}
+.tl-tag{
+  background:var(--blue-light);color:var(--blue2);
+  padding:.2rem .65rem;border-radius:20px;
+  font-size:.68rem;font-weight:600;
+}
+
+/* ═══════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════ */
+.skills-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;
+}
+.skills-col h3{
+  font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--blue2);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.skills-col h3::after{content:'';flex:1;height:1px;background:var(--line)}
+.skill-item{margin-bottom:1rem}
+.skill-header{display:flex;justify-content:space-between;margin-bottom:.35rem;font-size:.8rem;font-weight:600;color:var(--ink)}
+.skill-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.skill-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--blue2));width:0;transition:width 1.2s ease}
+.skill-tools{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.tool-tag{
+  background:var(--blue-light);color:var(--blue);
+  padding:.3rem .8rem;border-radius:20px;
+  font-size:.72rem;font-weight:600;
+  border:1px solid rgba(0,92,191,.12);
+  transition:all .2s;
+}
+.tool-tag:hover{background:var(--blue);color:var(--white)}
+
+/* ═══════════════════════════════════════
+   CERTIFICATIONS
+═══════════════════════════════════════ */
+.certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3rem}
+.cert-card{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1.4rem;border:1px solid var(--line);border-radius:6px;
+  background:var(--white);transition:all .25s;
+}
+.cert-card:hover{border-color:var(--blue2);box-shadow:0 6px 24px rgba(0,61,122,.1)}
+.cert-badge{
+  width:48px;height:48px;border-radius:var(--radius);
+  background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+  color:var(--gold);flex-shrink:0;
+}
+.cert-card h4{font-size:.83rem;font-weight:700;color:var(--ink);margin-bottom:.2rem;line-height:1.4}
+.cert-card p{font-size:.73rem;color:var(--muted)}
+
+/* ═══════════════════════════════════════
+   MARKETS
+═══════════════════════════════════════ */
+.markets-band{
+  background:var(--blue);
+  padding:4.5rem 5rem;
+  position:relative;overflow:hidden;
+}
+.markets-band::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
+             linear-gradient(180deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:50px 50px;
+}
+.markets-band .sec-eyebrow,.markets-band .sec-title,.markets-band .sec-sub{color:var(--white)}
+.markets-band .sec-eyebrow{color:var(--gold)}
+.markets-row{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem;position:relative;z-index:1}
+.market-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);border-radius:6px;
+  padding:1.8rem 2.8rem;min-width:150px;text-align:center;
+  transition:all .25s;cursor:default;
+}
+.market-card:hover{background:rgba(255,255,255,.12);border-color:var(--gold);transform:translateY(-4px)}
+.market-flag{font-size:2.2rem;margin-bottom:.6rem}
+.market-name{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600}
+.market-detail{font-size:.68rem;color:rgba(255,255,255,.45);margin-top:.2rem}
+
+/* ═══════════════════════════════════════
+   EDUCATION
+═══════════════════════════════════════ */
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.edu-card{
+  background:var(--white);border:1px solid var(--line);border-radius:6px;
+  padding:2rem;position:relative;overflow:hidden;
+  transition:all .25s;
+}
+.edu-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--blue2)}
+.edu-card:hover{box-shadow:0 10px 30px rgba(0,61,122,.1);transform:translateY(-3px)}
+.edu-icon{font-size:1.8rem;margin-bottom:.8rem}
+.edu-year{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.4rem;filter:brightness(.8)}
+.edu-degree{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;line-height:1.3}
+.edu-uni{font-size:.8rem;color:var(--muted)}
+
+/* ═══════════════════════════════════════
+   FAQ
+═══════════════════════════════════════ */
+.faq-list{max-width:800px;margin:3rem auto 0}
+.faq-item{
+  border:1px solid var(--line);border-radius:var(--radius);
+  margin-bottom:.7rem;overflow:hidden;
+  transition:box-shadow .2s;
+}
+.faq-item:hover{box-shadow:0 4px 16px rgba(0,61,122,.08)}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 1.4rem;background:var(--white);
+  font-size:.88rem;font-weight:600;color:var(--ink);
+  cursor:pointer;border:none;text-align:left;
+  transition:background .2s;
+}
+.faq-q:hover,.faq-item.open .faq-q{background:var(--blue-light);color:var(--blue)}
+.faq-icon{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--blue-light);color:var(--blue2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;font-weight:700;flex-shrink:0;
+  transition:all .3s;
+}
+.faq-item.open .faq-icon{background:var(--blue);color:var(--white);transform:rotate(45deg)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+  font-size:.83rem;color:var(--muted);line-height:1.85;
+  padding:0 1.4rem;background:var(--off);
+}
+.faq-item.open .faq-a{max-height:300px;padding:1rem 1.4rem}
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start}
+.contact-info h3{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.contact-info p{font-size:.85rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem}
+.contact-info p strong{color:var(--ink);font-weight:600}
+.contact-channels{display:flex;flex-direction:column;gap:.8rem}
+.ch{
+  display:flex;align-items:center;gap:1rem;
+  padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--white);text-decoration:none;color:var(--ink);
+  transition:all .2s;
+}
+.ch:hover{border-color:var(--blue2);background:var(--blue-light)}
+.ch-icon{
+  width:38px;height:38px;border-radius:var(--radius);
+  background:var(--blue-light);color:var(--blue2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:1rem;
+}
+.ch-text h4{font-size:.8rem;font-weight:700;color:var(--ink)}
+.ch-text p{font-size:.73rem;color:var(--muted)}
+/* form */
+.contact-form{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:2.2rem}
+.form-title{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.form-sub{font-size:.78rem;color:var(--muted);margin-bottom:1.5rem}
+.fg{margin-bottom:1rem}
+.fg label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.fg input,.fg textarea,.fg select{
+  width:100%;padding:.78rem 1rem;
+  background:var(--off);border:1px solid var(--line);border-radius:var(--radius);
+  font-family:'Poppins',sans-serif;font-size:.83rem;color:var(--ink);
+  outline:none;transition:border-color .2s,background .2s;appearance:none;
+}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue2);background:var(--white)}
+.fg textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-blue{
+  width:100%;padding:.85rem;
+  background:var(--blue);color:var(--white);
+  border:none;border-radius:var(--radius);cursor:pointer;
+  font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  transition:background .25s;
+}
+.btn-blue:hover{background:var(--blue2)}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:var(--ink)}
+.footer-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;
+  padding:4rem 5rem 3rem;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.footer-brand .nav-logo-mark{margin-bottom:1rem;width:46px;height:46px;font-size:1rem}
+.footer-brand p{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:1.2rem;max-width:240px}
+.footer-social{display:flex;gap:.6rem}
+.social-btn{
+  width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  color:rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center;font-size:.8rem;
+  transition:all .2s;
+}
+.social-btn:hover{background:var(--blue2);border-color:var(--blue2);color:var(--white)}
+.footer-col h4{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  color:var(--gold);margin-bottom:1.1rem;
+}
+.footer-col ul li{margin-bottom:.55rem}
+.footer-col ul li a{font-size:.78rem;color:rgba(255,255,255,.45);transition:color .2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-bottom{
+  padding:1.2rem 5rem;display:flex;align-items:center;justify-content:space-between;
+  font-size:.73rem;color:rgba(255,255,255,.3);
+}
+.footer-bottom a{color:rgba(255,255,255,.3);transition:color .2s}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* ═══════════════════════════════════════
+   FLOATING CTA
+═══════════════════════════════════════ */
+.float-cta{
+  position:fixed;bottom:2rem;right:2rem;z-index:300;
+  background:var(--blue);color:var(--white);
+  padding:.7rem 1.4rem;border-radius:30px;
+  font-size:.75rem;font-weight:700;letter-spacing:.06em;
+  box-shadow:0 8px 24px rgba(0,61,122,.35);
+  display:flex;align-items:center;gap:.5rem;
+  transition:all .25s;animation:floatBounce 3s ease-in-out infinite;
+}
+.float-cta:hover{background:var(--gold);color:var(--blue);transform:translateY(-3px)!important}
+@keyframes floatBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ═══════════════════════════════════════
+   REVEAL ANIMATIONS
+═══════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .65s ease,transform .65s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .65s ease,transform .65s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+.delay-5{transition-delay:.5s}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1024px){
+  .topbar,.nav,.sec,.footer-top,.footer-bottom,.markets-band{padding-left:2rem;padding-right:2rem}
+  nav{padding:0 2rem}
+  .hero-content{padding:0 2rem}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .process-steps{grid-template-columns:repeat(3,1fr)}
+  .process-steps::before{display:none}
+  .stats-strip{grid-template-columns:repeat(3,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  .nav-menu{display:none}
+  .hero{height:480px}
+  .about-grid,.contact-grid,.skills-layout{grid-template-columns:1fr}
+  .sectors-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .edu-grid,.certs-grid{grid-template-columns:1fr}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-item">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:+917798365688">+91 77983 65688</a>
+    </div>
+    <div class="topbar-item">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      <a href="mailto:yushking1504@gmail.com">yushking1504@gmail.com</a>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <a href="https://www.linkedin.com/in/ayush-shukla-158b28289" target="_blank">LinkedIn ↗</a>
+    <span style="opacity:.3">|</span>
+    <span>📍 Nashik, Maharashtra, India</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">AS</div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-name">Ayush Shukla</div>
+      <div class="nav-logo-sub">Talent Acquisition Specialist</div>
+    </div>
+  </div>
+  <div class="nav-menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<div class="hero">
+  <div class="hero-slides" id="heroSlides">
+    <!-- Slide 1 -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-tag">🌐 Global Talent Acquisition</div>
+        <h1 class="hero-title">India's Trusted<br/><span>Recruitment Specialist</span><br/>for IT & Finance</h1>
+        <p class="hero-desc">3+ years placing top professionals across USA, India, Canada & Singapore. Full-cycle hiring, zero compromise on quality.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-gold">📋 Hire Talent Now</a>
+          <a href="#services" class="btn-outline-w">Explore Services</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-tag">💼 USA Staffing Expert</div>
+        <h1 class="hero-title">W2 · C2C · 1099<br/><span>US Recruitment</span><br/>Done Right</h1>
+        <p class="hero-desc">Specialized in end-to-end USA staffing with full compliance on US labor laws, tax terms, and employment structures.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-gold">🤝 Let's Connect</a>
+          <a href="#experience" class="btn-outline-w">View Track Record</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-tag">🎓 Finance + HR Edge</div>
+        <h1 class="hero-title">Recruiter with a<br/><span>BBA Finance</span><br/>Advantage</h1>
+        <p class="hero-desc">A unique blend of talent acquisition expertise and financial acumen — for smarter, faster, and more precise hiring outcomes.</p>
+        <div class="hero-btns">
+          <a href="#about" class="btn-gold">📖 My Story</a>
+          <a href="#sectors" class="btn-outline-w">Sectors I Cover</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="hero-prev" onclick="moveSlide(-1)">&#8592;</button>
+  <button class="hero-next" onclick="moveSlide(1)">&#8594;</button>
+  <div class="hero-dots" id="heroDots">
+    <div class="hero-dot active" onclick="goSlide(0)"></div>
+    <div class="hero-dot" onclick="goSlide(1)"></div>
+    <div class="hero-dot" onclick="goSlide(2)"></div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-cell">
+    <div class="stat-n"><span class="count" data-target="3">0</span><sup>+</sup></div>
+    <div class="stat-l">Years Experience</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n"><span class="count" data-target="100">0</span><sup>+</sup></div>
+    <div class="stat-l">Professionals Placed</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n"><span class="count" data-target="4">0</span></div>
+    <div class="stat-l">Global Markets</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n"><span class="count" data-target="6">0</span></div>
+    <div class="stat-l">Industry Verticals</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n"><span class="count" data-target="4">0</span></div>
+    <div class="stat-l">LinkedIn Certifications</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec sec-alt" id="services">
+  <div class="sec-center">
+    <div class="sec-eyebrow">What I Offer</div>
+    <h2 class="sec-title">Recruitment & <span>HR Services</span></h2>
+    <div class="divider-gold"></div>
+    <p class="sec-sub">End-to-end talent solutions tailored for companies seeking top-tier professionals across IT, Finance, and beyond — globally.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1">
+      <div class="service-icon">💻</div>
+      <h3>IT Recruitment</h3>
+      <p>Full-cycle hiring for software developers, project managers, architects, data engineers, and all tech roles across India, USA & Singapore.</p>
+      <a href="#contact" class="service-link">Get Started →</a>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="service-icon">🏦</div>
+      <h3>Finance & Banking Hiring</h3>
+      <p>Specialized placement for finance professionals — retail banking, trade finance, microfinance, SME banking, and financial analysis roles.</p>
+      <a href="#contact" class="service-link">Get Started →</a>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="service-icon">🎯</div>
+      <h3>Executive Search</h3>
+      <p>Identifying and placing senior leadership and C-suite talent who drive strategy, lead teams, and deliver measurable business results.</p>
+      <a href="#contact" class="service-link">Get Started →</a>
+    </div>
+    <div class="service-card reveal delay-1">
+      <div class="service-icon">🇺🇸</div>
+      <h3>USA Staffing (W2/C2C/1099)</h3>
+      <p>End-to-end US staffing with full compliance on W2, Corp-to-Corp (C2C), and 1099 contractor engagements — across all major US industries.</p>
+      <a href="#contact" class="service-link">Get Started →</a>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="service-icon">📋</div>
+      <h3>Resume Writing & Review</h3>
+      <p>ATS-optimized, professionally crafted resumes that highlight your strengths, stand out to recruiters, and land interviews faster.</p>
+      <a href="#contact" class="service-link">Get Started →</a>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="service-icon">🤝</div>
+      <h3>HR Consulting</h3>
+      <p>Strategic HR advisory covering workforce planning, talent pipeline development, employer branding, and recruitment process optimization.</p>
+      <a href="#contact" class="service-link">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal-left">
+      <div class="about-img-card">
+        <div class="about-avatar">AS</div>
+        <h3>Ayush Shukla</h3>
+        <p>Talent Acquisition Specialist — IT & Finance</p>
+        <div class="about-chips">
+          <span class="chip">LinkedIn Recruiter</span>
+          <span class="chip">Ceipal ATS</span>
+          <span class="chip">SAP Fieldglass</span>
+          <span class="chip">BBA Finance</span>
+          <span class="chip">USA Staffing</span>
+          <span class="chip">W2 · C2C · 1099</span>
+        </div>
+      </div>
+      <div class="about-badge">
+        <strong>3+</strong>
+        Years<br/>Global<br/>Hiring
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <div class="sec-eyebrow">About Me</div>
+      <h2 class="sec-title">Bridging Talent &<br/><span>Financial Intelligence</span></h2>
+      <div class="divider-gold" style="margin:0 0 1.5rem"></div>
+      <p>Over the past <strong>3+ years</strong>, I've placed IT, banking, and finance professionals across the USA, Canada, India, and Singapore — managing full recruitment cycles using LinkedIn Recruiter, Ceipal, SAP Fieldglass, Dice, and Indeed.</p>
+      <p>Currently at <strong>Novel Financial Solutions</strong>, I lead hiring for IT and financial services roles, partnering with senior stakeholders to build talent pipelines that match real business needs.</p>
+      <p>What makes me different: I pair recruitment expertise with a strong financial foundation — a <strong>BBA Finance graduate (Savitribai Phule Pune University, 2025)</strong> with practical experience in accounting, balance sheet preparation, and taxation.</p>
+      <div class="about-pillars">
+        <div class="pillar"><div class="pillar-icon">🌐</div><div><h4>Global Reach</h4><p>USA · India · Canada · Singapore</p></div></div>
+        <div class="pillar"><div class="pillar-icon">⚡</div><div><h4>Fast Turnaround</h4><p>CVs delivered within 48 hours</p></div></div>
+        <div class="pillar"><div class="pillar-icon">💼</div><div><h4>Full-Cycle Hiring</h4><p>JD to onboarding — end to end</p></div></div>
+        <div class="pillar"><div class="pillar-icon">📊</div><div><h4>Finance + HR Edge</h4><p>Dual expertise, sharper hiring</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sec sec-alt" id="sectors">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Industry Coverage</div>
+    <h2 class="sec-title">Sectors <span>I Cater To</span></h2>
+    <div class="divider-gold"></div>
+    <p class="sec-sub">Deep domain knowledge across 6 key industry verticals — enabling precise candidate matching and faster time-to-hire.</p>
+  </div>
+  <div class="sectors-grid">
+    <div class="sector-card reveal delay-1">
+      <div class="sector-icon">💻</div>
+      <div><h3>Information Technology</h3><p>Software Dev · Project Management · Data Engineering · Cloud · DevOps · QA</p></div>
+    </div>
+    <div class="sector-card reveal delay-2">
+      <div class="sector-icon">🏦</div>
+      <div><h3>Banking & Finance</h3><p>Retail Banking · Trade Finance · Microfinance · SME · Financial Analysis · FinTech</p></div>
+    </div>
+    <div class="sector-card reveal delay-3">
+      <div class="sector-icon">🏥</div>
+      <div><h3>Healthcare</h3><p>Hospital Administration · Medical Coding · Pharmaceutical · Clinical Research</p></div>
+    </div>
+    <div class="sector-card reveal delay-1">
+      <div class="sector-icon">⚙️</div>
+      <div><h3>Manufacturing & Engineering</h3><p>Architecture · Civil · Mechanical · Electrical · Plant Operations · QC</p></div>
+    </div>
+    <div class="sector-card reveal delay-2">
+      <div class="sector-icon">📞</div>
+      <div><h3>BPO / KPO</h3><p>Customer Support · Analytics · Research · Data Processing · Back Office</p></div>
+    </div>
+    <div class="sector-card reveal delay-3">
+      <div class="sector-icon">🛒</div>
+      <div><h3>FMCG & Retail</h3><p>Sales · Category Management · Supply Chain · Brand · E-commerce · Merchandising</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME -->
+<section class="sec">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Why Work With Me</div>
+    <h2 class="sec-title">The <span>Ayush Shukla</span> Advantage</h2>
+    <div class="divider-gold"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal delay-1">
+      <div class="why-num">01</div>
+      <h3>Finance-Backed Recruiter</h3>
+      <p>BBA Finance background gives me a unique edge in understanding business needs, compensation benchmarks, and financial roles deeply.</p>
+    </div>
+    <div class="why-card reveal delay-2">
+      <div class="why-num">02</div>
+      <h3>48-Hour CV Delivery</h3>
+      <p>Post job description, screened and qualified CVs are delivered within 48 hours — one of the fastest turnarounds in the industry.</p>
+    </div>
+    <div class="why-card reveal delay-3">
+      <div class="why-num">03</div>
+      <h3>Global Compliance</h3>
+      <p>Deep expertise in US labor law, W2/C2C/1099 structures, and multi-market hiring standards across 4 countries.</p>
+    </div>
+    <div class="why-card reveal delay-4">
+      <div class="why-num">04</div>
+      <h3>AI-Powered Sourcing</h3>
+      <p>Certified in AI-powered LinkedIn Recruiting — combining technology and human judgment to find the perfect talent match.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec sec-alt">
+  <div class="sec-center">
+    <div class="sec-eyebrow">How It Works</div>
+    <h2 class="sec-title">My Hiring <span>Process</span></h2>
+    <div class="divider-gold"></div>
+    <p class="sec-sub">A structured, transparent, and efficient process — from understanding your needs to successful onboarding.</p>
+  </div>
+  <div class="process-steps">
+    <div class="step reveal delay-1">
+      <div class="step-num">1</div>
+      <h4>Requirement Briefing</h4>
+      <p>Understand job role, team culture, compensation, and timeline</p>
+    </div>
+    <div class="step reveal delay-2">
+      <div class="step-num">2</div>
+      <h4>Talent Sourcing</h4>
+      <p>Multi-channel search via LinkedIn, Dice, Naukri, Indeed & ATS</p>
+    </div>
+    <div class="step reveal delay-3">
+      <div class="step-num">3</div>
+      <h4>Screening & Shortlisting</h4>
+      <p>Structured interviews, skill assessment, and culture fit validation</p>
+    </div>
+    <div class="step reveal delay-4">
+      <div class="step-num">4</div>
+      <h4>Interview Coordination</h4>
+      <p>Schedule, prep candidates, and liaise with hiring managers</p>
+    </div>
+    <div class="step reveal delay-5">
+      <div class="step-num">5</div>
+      <h4>Offer & Onboarding</h4>
+      <p>Salary negotiation, offer closure, and smooth onboarding support</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Career History</div>
+    <h2 class="sec-title">Work <span>Experience</span></h2>
+    <div class="divider-gold"></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-period">January 2025 — Present</div>
+      <div class="tl-role">Talent Acquisition Specialist</div>
+      <div class="tl-company">Novel Financial Solutions</div>
+      <div class="tl-loc">📍 Nashik, Maharashtra, India</div>
+      <div class="tl-desc">Lead end-to-end talent acquisition for IT and non-IT roles across India, Singapore, and the USA. Partner with senior stakeholders on workforce planning, ATS management, offer negotiation, and onboarding. Successfully reduced time-to-hire and built robust talent pipelines for banking and financial services clients.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">Ceipal ATS</span><span class="tl-tag">SAP Fieldglass</span><span class="tl-tag">LinkedIn Recruiter</span><span class="tl-tag">IT Hiring</span><span class="tl-tag">Finance Hiring</span><span class="tl-tag">India · Singapore · USA</span>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-period">August 2024 — January 2025</div>
+      <div class="tl-role">IT / Non-IT Recruitment Specialist</div>
+      <div class="tl-company">ZealoTech People</div>
+      <div class="tl-loc">📍 Nashik, Maharashtra, India</div>
+      <div class="tl-desc">Specialized in IT and architectural engineering recruitment for USA-based clients. Developed targeted hiring strategies, ensured full US labor law compliance (W2, C2C, 1099), and built long-term client relationships. Placed engineers and architects in top US firms with improved hiring efficiency.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">USA Staffing</span><span class="tl-tag">W2 · C2C · 1099</span><span class="tl-tag">Engineering Hiring</span><span class="tl-tag">US Labor Law</span>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-period">March 2024 — August 2024</div>
+      <div class="tl-role">US IT Recruitment Specialist</div>
+      <div class="tl-company">iPeople Infosystems LLC</div>
+      <div class="tl-loc">📍 Nashik, Maharashtra, India</div>
+      <div class="tl-desc">Recruited IT and non-IT professionals for clients across USA, Canada, and India. Specialized in software development, project management, healthcare, and financial domains. Reduced hiring bottlenecks by optimizing end-to-end recruitment workflows.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">USA · Canada · India</span><span class="tl-tag">Software Dev</span><span class="tl-tag">Healthcare</span><span class="tl-tag">Indeed · Dice · Naukri</span>
+      </div>
+    </div>
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-period">January 2023 — December 2023</div>
+      <div class="tl-role">Associate</div>
+      <div class="tl-company">WNS</div>
+      <div class="tl-loc">📍 Nashik, Maharashtra, India</div>
+      <div class="tl-desc">Managed pallet recall, inventory processes, high-volume data entry, billing reconciliation, and database maintenance across supply chain operations. Improved data accuracy and streamlined operational workflows.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">Supply Chain</span><span class="tl-tag">Data Management</span><span class="tl-tag">Billing</span><span class="tl-tag">Operations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec sec-alt" id="skills">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Expertise</div>
+    <h2 class="sec-title">Skills & <span>Tools</span></h2>
+    <div class="divider-gold"></div>
+    <p class="sec-sub">A proven toolkit of recruitment platforms, sourcing channels, and domain knowledge built over 3+ years of global hiring.</p>
+  </div>
+  <div class="skills-layout">
+    <div class="reveal">
+      <div class="skills-col">
+        <h3>Recruitment Skills</h3>
+        <div class="skill-item"><div class="skill-header"><span>Full-Cycle Talent Acquisition</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>IT & Finance Hiring</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>USA Staffing (W2/C2C/1099)</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>Executive Search</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>Offer & Salary Negotiation</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+      </div>
+      <div style="margin-top:2rem">
+        <h3 style="font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem">ATS & Platforms <span style="flex:1;height:1px;background:var(--line);display:block"></span></h3>
+        <div class="skill-tools">
+          <span class="tool-tag">Ceipal ATS</span>
+          <span class="tool-tag">SAP Fieldglass</span>
+          <span class="tool-tag">LinkedIn Recruiter</span>
+          <span class="tool-tag">Recruiter Lite</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal delay-2">
+      <div class="skills-col">
+        <h3>Finance Skills</h3>
+        <div class="skill-item"><div class="skill-header"><span>Accounting & Taxation</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>Financial Analysis</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>Balance Sheet Preparation</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>Stakeholder Management</span><span>93%</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span>Vendor Management</span><span>87%</span></div><div class="skill-bar"><div class="skill-fill" data-width="87"></div></div></div>
+      </div>
+      <div style="margin-top:2rem">
+        <h3 style="font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem">Sourcing Channels <span style="flex:1;height:1px;background:var(--line);display:block"></span></h3>
+        <div class="skill-tools">
+          <span class="tool-tag">LinkedIn</span>
+          <span class="tool-tag">Naukri</span>
+          <span class="tool-tag">Dice</span>
+          <span class="tool-tag">Indeed</span>
+          <span class="tool-tag">Monster</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="sec">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Credentials</div>
+    <h2 class="sec-title">LinkedIn <span>Certifications</span></h2>
+    <div class="divider-gold"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card reveal delay-1">
+      <div class="cert-badge">01</div>
+      <div><h4>LinkedIn Recruiter: AI-Powered Talent Acquisition</h4><p>LinkedIn Learning · 2024</p></div>
+    </div>
+    <div class="cert-card reveal delay-2">
+      <div class="cert-badge">02</div>
+      <div><h4>Generative AI, Recruiting & Talent Acquisition</h4><p>LinkedIn Learning · 2024</p></div>
+    </div>
+    <div class="cert-card reveal delay-3">
+      <div class="cert-badge">03</div>
+      <div><h4>Get Started with Recruiter Assessment</h4><p>LinkedIn Learning · 2024</p></div>
+    </div>
+    <div class="cert-card reveal delay-4">
+      <div class="cert-badge">04</div>
+      <div><h4>Investing in Human Skills in the Age of AI</h4><p>LinkedIn Learning · 2024</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<div class="markets-band">
+  <div class="sec-center">
+    <div class="sec-eyebrow" style="justify-content:center">Global Presence</div>
+    <h2 class="sec-title" style="color:var(--white)">Markets <span>I've Served</span></h2>
+    <div class="divider-gold"></div>
+  </div>
+  <div class="markets-row">
+    <div class="market-card"><div class="market-flag">🇺🇸</div><div class="market-name">United States</div><div class="market-detail">IT · Finance · Engineering</div></div>
+    <div class="market-card"><div class="market-flag">🇮🇳</div><div class="market-name">India</div><div class="market-detail">Pan-India Coverage</div></div>
+    <div class="market-card"><div class="market-flag">🇨🇦</div><div class="market-name">Canada</div><div class="market-detail">IT · Healthcare</div></div>
+    <div class="market-card"><div class="market-flag">🇸🇬</div><div class="market-name">Singapore</div><div class="market-detail">Banking · Finance · IT</div></div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section class="sec sec-alt" id="education">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Academic Background</div>
+    <h2 class="sec-title">Education & <span>Qualifications</span></h2>
+    <div class="divider-gold"></div>
+  </div>
+  <div class="edu-grid" style="max-width:760px;margin:3rem auto 0">
+    <div class="edu-card reveal delay-1">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-year">August 2022 – May 2025</div>
+      <div class="edu-degree">Bachelor of Business Administration — Finance</div>
+      <div class="edu-uni">Savitribai Phule Pune University, Pune</div>
+    </div>
+    <div class="edu-card reveal delay-2">
+      <div class="edu-icon">📜</div>
+      <div class="edu-year">2024 – Present</div>
+      <div class="edu-degree">LinkedIn Learning Certifications</div>
+      <div class="edu-uni">AI-Powered Recruitment · Generative AI in HR · Human Skills</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="sec-center">
+    <div class="sec-eyebrow">FAQ</div>
+    <h2 class="sec-title">Frequently Asked <span>Questions</span></h2>
+    <div class="divider-gold"></div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What types of roles do you recruit for? <span class="faq-icon">+</span></button>
+      <div class="faq-a">I recruit for a wide range of roles across IT (developers, architects, PMs, data engineers), Finance & Banking (relationship managers, analysts, trade finance), Healthcare, Engineering, BPO/KPO, and FMCG. Both individual contributor and leadership/senior roles.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">Which geographies do you cover? <span class="faq-icon">+</span></button>
+      <div class="faq-a">I have active experience placing candidates across the USA, India, Canada, and Singapore. For USA roles, I am fully compliant with W2, Corp-to-Corp (C2C), and 1099 structures, as well as all relevant US labor laws and employment regulations.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">How quickly can you deliver shortlisted CVs? <span class="faq-icon">+</span></button>
+      <div class="faq-a">After receiving a detailed Job Description (JD), I typically deliver a shortlist of pre-screened, qualified candidates within 48 hours. For niche or senior roles, this may extend slightly, but I always communicate timelines clearly upfront.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">Do you offer resume writing services for candidates? <span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes! I offer professional ATS-optimized resume writing and review services for job seekers. Whether you're a fresher or an experienced professional, I help you craft a resume that gets noticed by recruiters and hiring managers.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">What is your recruitment process like? <span class="faq-icon">+</span></button>
+      <div class="faq-a">My process involves: (1) Detailed requirement briefing with the hiring manager, (2) Multi-channel talent sourcing, (3) Structured screening and shortlisting, (4) Interview scheduling and candidate preparation, (5) Offer negotiation and onboarding support. It's fully end-to-end.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFAQ(this)">How is working with you different from a large recruitment agency? <span class="faq-icon">+</span></button>
+      <div class="faq-a">You get direct, personalized attention — no junior desk handling your requirement. With a BBA Finance background, I also understand financial roles, business objectives, and compensation benchmarks far better than a typical recruiter, making every placement more precise and effective.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec sec-alt" id="contact">
+  <div class="sec-center">
+    <div class="sec-eyebrow">Get in Touch</div>
+    <h2 class="sec-title">Let's <span>Work Together</span></h2>
+    <div class="divider-gold"></div>
+    <p class="sec-sub">Whether you're looking to hire top talent or explore a collaboration — I'd love to hear from you.</p>
+  </div>
+  <div class="contact-grid" style="margin-top:3rem">
+    <div class="contact-info reveal-left">
+      <h3>Open to Opportunities In</h3>
+      <p>I'm currently available for <strong>freelance recruitment projects</strong>, <strong>full-time TA roles</strong>, and <strong>consulting engagements</strong> across Talent Strategy, Finance Operations, Investment Support, and HR Business Partnering — India & globally.</p>
+      <div class="contact-channels">
+        <a class="ch" href="mailto:yushking1504@gmail.com">
+          <div class="ch-icon">✉️</div>
+          <div class="ch-text"><h4>Email</h4><p>yushking1504@gmail.com</p></div>
+        </a>
+        <a class="ch" href="tel:+917798365688">
+          <div class="ch-icon">📞</div>
+          <div class="ch-text"><h4>Phone / WhatsApp</h4><p>+91 77983 65688</p></div>
+        </a>
+        <a class="ch" href="https://www.linkedin.com/in/ayush-shukla-158b28289" target="_blank">
+          <div class="ch-icon">🔗</div>
+          <div class="ch-text"><h4>LinkedIn</h4><p>linkedin.com/in/ayush-shukla</p></div>
+        </a>
+        <span class="ch">
+          <div class="ch-icon">📍</div>
+          <div class="ch-text"><h4>Location</h4><p>Nashik, Maharashtra, India</p></div>
+        </span>
+      </div>
+    </div>
+    <div class="contact-form reveal-right">
+      <div class="form-title">Send an Enquiry</div>
+      <div class="form-sub">Fill in the form and I'll get back to you within 24 hours.</div>
+      <div class="form-row">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Jane"/></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+      </div>
+      <div class="fg"><label>Email Address</label><input type="email" placeholder="jane@company.com"/></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 or +1 ..."/></div>
+      <div class="fg">
+        <label>I am looking to</label>
+        <select>
+          <option value="">— Select —</option>
+          <option>Hire Talent</option>
+          <option>Find a Job</option>
+          <option>Resume Writing / Review</option>
+          <option>HR Consulting</option>
+          <option>Collaborate / Partner</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message</label><textarea placeholder="Please share details about the role, location, budget, or anything else..."></textarea></div>
+      <button class="btn-blue" onclick="this.textContent='✓ Enquiry Sent!';this.style.background='#1a7a3c';setTimeout(()=>{this.textContent='Submit Enquiry';this.style.background=''},3500)">Submit Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo-mark" style="margin-bottom:1rem;font-size:.9rem;width:44px;height:44px">AS</div>
+      <p>Global Talent Acquisition Specialist bridging IT, Finance & Banking talent across the USA, India, Canada & Singapore.</p>
+      <div class="footer-social">
+        <a class="social-btn" href="https://www.linkedin.com/in/ayush-shukla-158b28289" target="_blank">in</a>
+        <a class="social-btn" href="mailto:yushking1504@gmail.com">✉</a>
+        <a class="social-btn" href="tel:+917798365688">☏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">IT Recruitment</a></li>
+        <li><a href="#services">Finance & Banking Hiring</a></li>
+        <li><a href="#services">Executive Search</a></li>
+        <li><a href="#services">USA Staffing</a></li>
+        <li><a href="#services">Resume Writing</a></li>
+        <li><a href="#services">HR Consulting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sectors</h4>
+      <ul>
+        <li><a href="#sectors">Information Technology</a></li>
+        <li><a href="#sectors">Banking & Finance</a></li>
+        <li><a href="#sectors">Healthcare</a></li>
+        <li><a href="#sectors">Manufacturing & Engineering</a></li>
+        <li><a href="#sectors">BPO / KPO</a></li>
+        <li><a href="#sectors">FMCG & Retail</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+917798365688">+91 77983 65688</a></li>
+        <li><a href="mailto:yushking1504@gmail.com">yushking1504@gmail.com</a></li>
+        <li><a href="#">Nashik, Maharashtra, India</a></li>
+        <li><a href="https://www.linkedin.com/in/ayush-shukla-158b28289" target="_blank">LinkedIn Profile ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Ayush Shukla — Talent Acquisition Specialist. All Rights Reserved.</span>
+    <div style="display:flex;gap:1.5rem">
+      <a href="#hero">Back to Top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<a class="float-cta" href="#contact">
+  📋 Hire Talent
+</a>
+
+<script>
+/* ── HERO SLIDER ── */
+let currentSlide = 0;
+const totalSlides = 3;
+const slidesEl = document.getElementById('heroSlides');
+const dots = document.querySelectorAll('.hero-dot');
+
+function goSlide(n){
+  currentSlide = (n + totalSlides) % totalSlides;
+  slidesEl.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((d,i)=>d.classList.toggle('active', i===currentSlide));
+}
+function moveSlide(dir){ goSlide(currentSlide + dir); }
+setInterval(()=>moveSlide(1), 5000);
+
+/* ── COUNTER ANIMATION ── */
+function animateCount(el){
+  const target = +el.dataset.target;
+  const duration = 1800;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(()=>{
+    current += step;
+    if(current >= target){ current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current);
+  }, 16);
+}
+const counterObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.count').forEach(animateCount);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.stats-strip').forEach(el=>counterObs.observe(el));
+
+/* ── SKILL BARS ── */
+const barObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.skill-fill').forEach(bar=>{
+        bar.style.width = bar.dataset.width + '%';
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll('.skills-layout').forEach(el=>barObs.observe(el));
+
+/* ── SCROLL REVEAL ── */
+const revObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>revObs.observe(el));
+
+/* ── FAQ TOGGLE ── */
+function toggleFAQ(btn){
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+/* ── NAV ACTIVE ── */
+const secs = document.querySelectorAll('section[id],[id]');
+const navLinks = document.querySelectorAll('.nav-menu a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{ if(window.scrollY>=s.offsetTop-120) cur=s.id; });
+  navLinks.forEach(a=>{ a.style.color = a.getAttribute('href')==='#'+cur ? 'var(--blue2)' : ''; });
+});
+</script>
+</body>
+</html>
